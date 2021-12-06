@@ -19,6 +19,9 @@ const makeImagesGallery = images.map(image => {
   return `<li> <img src="${image.url}" alt="${image.alt}" width="370"></li>`}
 ).join('');
 console.log(makeImagesGallery);
+
+imagesGallery.style.display.flex;
+
 imagesGallery.insertAdjacentHTML("afterbegin", makeImagesGallery);
 
 // const makeImagesGallery = ({ url, alt }) => {

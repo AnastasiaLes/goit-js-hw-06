@@ -9,10 +9,16 @@ const ingredients = [
 
 const list = document.querySelector('ul');
 
-
-ingredients.forEach(ingredient => {
-  const ingredientsList = document.createElement('li');
-  ingredientsList.classList.add('item');
-  ingredientsList.textContent = ingredient;
-  list.prepend(ingredientsList);
+const ingredientsList = ingredients.map((ingredient) => {
+  const li = document.createElement('li');
+  li.textContent = ingredient;
+  return li;
 });
+// ingredients.forEach(ingredient => {
+  
+//   ingredientsList.classList.add('item');
+//   ingredientsList.textContent = ingredient;
+  
+// });
+
+list.prepend(...ingredientsList);

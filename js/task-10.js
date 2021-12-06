@@ -19,10 +19,7 @@ const btn = document.querySelector('button');
 // createNewEl.style.backgroundColor = getRandomHexColor();
 // console.log(createNewEl);
 
-const createNewEl = document.createElement('div');
-    createNewEl.style.width = '30px';
-    createNewEl.style.height = '30px';
-    createNewEl.style.backgroundColor = getRandomHexColor();
+
 
 createBtnEl.addEventListener('click', onCreateElements);
 
@@ -30,14 +27,19 @@ function onCreateElements (event) {
   const amount = inputEl.value;
   console.log(amount);
  
-
   for (let i = 1; i <= amount; i += 1)
-  {
+  {const createNewEl = document.createElement('div');
+    createNewEl.style.width = '30px';
+    createNewEl.style.height = '30px';
+    createNewEl.style.backgroundColor = getRandomHexColor();
     console.log(createNewEl);
-    boxesPlace.append(createNewEl);
+    
+    boxesPlace.insertAdjacentHTML('afterbegin', createNewEl);
+
+  // boxesPlace.append(createNewEl);  
   };
-  
  };
+
 
 // let amount = 0;
 // inputEl.addEventListener('blur', () => {
